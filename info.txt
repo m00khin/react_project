@@ -1,0 +1,44 @@
+pip install django
+django-admin startproject drf
+python .\manage.py migrate
+python .\manage.py startapp cars
+# settings: lang, tz,
+python .\manage.py makemigrations cars
+python .\manage.py createsuperuser
+pip install djangorestframework
+#django-admin --version
+## pip install --upgrade django==4.1.10
+## pip install django-rest-swagger
+#pip install -U drf-yasg
+#pip install -U drf-yasg[validation]
+#pip install django-filter
+
+pip install django-cors-headers
+
+npm config set proxy http://172.17.200.247:3128
+npm config set https-proxy http://172.17.200.247:3128
+npm config set registry http://registry.npmjs.org/
+npm config set strict-ssl false
+npm install -g npm-check-updates
+npm update
+
+npm install -g https://tls-test.npmjs.com/tls-test-1.0.0.tgz
+
+npx create-react-app .
+
+npm i axios
+
+npm run build
+	Bundles the app into static files for production.
+npm test
+    Starts the test runner.
+npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd C:\Users\SMSAdmin\PycharmProjects\it-overone\react\todo-front
+  npm start
+	
+
