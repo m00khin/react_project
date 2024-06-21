@@ -35,9 +35,10 @@ function App() {
     return (
         <div className="App">
             <button className='btn btn-info' onClick={getTodos}>Обновить список дел</button>
-            <AddTodo createTodo={createTodo}/>
+            {/*<AddTodo createTodo={createTodo}/>*/}
             <h1 style={{color: "red", textAlign: "center"}}><strong>Список наших дел</strong></h1>
             <TodoList todos={todos} removeTodo={removeTodo} editDone={editDone}/>
+            <AddTodo createTodo={createTodo}/>
         </div>
     );
 }

@@ -41,4 +41,5 @@ We suggest that you begin by typing:
   cd C:\Users\SMSAdmin\PycharmProjects\it-overone\react\todo-front
   npm start
 	
-
+npm install --save-dev @babel/plugin-proposal-private-property-in-object
+npm install react-hook-form
