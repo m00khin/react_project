@@ -4,22 +4,20 @@ import Todo from "./Todo";
 
 const TodoList = ({todos, removeTodo, editDone}) => {
     if (!todos.length) {
-        return <h1 style={{textAlign: "center"}}>Дела не найдены</h1>
+        return <h2 style={{textAlign: "center", color: 'red'}}>Дела не найдены</h2>
     }
 
     return (
-        <div>
-            <table className="table" style={{width: "80%"}}>
-                <thead>
+        <div className='container'>
+            <table className="table table-hover table-sm align-middle table-bordered">
+                <thead className='table-light' style={{textAlign: 'center'}}>
                 <tr>
-                    <th scope="colId">Номер</th>
-                    <th scope="colTitle">Название</th>
-                    <th scope="colDescription">Описание</th>
-                    <th scope="colDate">Дата</th>
-                    <th scope="colIsDone">Статус</th>
-                    <th scope="colSetDone">Выполнить</th>
-                    <th scope="colSetNotDone">Отменить</th>
-                    <th scope="colDelete">Удалить</th>
+                    <th>Номер</th>
+                    <th>Название</th>
+                    <th>Описание</th>
+                    <th>Дата</th>
+                    <th>Статус</th>
+                    <th>Удалить</th>
                 </tr>
                 </thead>
                 <tbody>
