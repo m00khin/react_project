@@ -2,6 +2,7 @@ import TodoList from './TodoList';
 import axios from "axios";
 import React, {useState} from "react";
 import AddTodo from "./AddTodo";
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
 const API_URL = 'http://127.0.0.1:8000/api/todo/'
@@ -37,10 +38,30 @@ function App() {
         axios.post(API_URL, newTodo)
     }
 
+    {/*const sortTodo = (todo, field) => {*/}
+    {/*    todo.{field} = field */}
+    {/*    setTodos([...todos, todo].sort(todo1, todo2) => {*/}
+    {/*        return todo1.field - todo2.field */}
+    {/*    })}*/}
+
     return (
         <div className="App">
-            <button className='btn btn-info' onClick={getTodos}>Обновить список дел</button>
-            <h1 style={{color: "blue", textAlign: "center"}}><strong>Список наших дел</strong></h1>
+            <div className='d-flex justify-content-center'>
+                <h1
+                    className='flex-grow-1'
+                    style={{color: "blue", textAlign: "center"}}>
+                    <strong>Список наших дел</strong>
+                </h1>
+                <button
+                    className='btn btn-outline-primary'
+                    style={{border: '0', background: '#fff', color: '#000'}}
+                    onClick={getTodos}>
+                    {/*<span className='badge rounded-pill'>*/}
+                        <i className='bi bi-arrow-repeat fs-2 text-primary'></i>
+                    {/*</span>*/}
+                </button>
+            </div>
+            {/*<TodoList todos={todos} removeTodo={removeTodo} editDone={editDone} sortTodo={sortTodo}/>*/}
             <TodoList todos={todos} removeTodo={removeTodo} editDone={editDone}/>
             <AddTodo createTodo={createTodo}/>
 
