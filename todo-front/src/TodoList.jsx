@@ -13,20 +13,36 @@ const TodoList = ({todos, removeTodo, editDone}) => {
             <table className="table table-hover table-sm align-middle table-bordered">
                 <thead className='table-light' style={{textAlign: 'center'}}>
                 <tr>
-                    {/*<th>*/}
-                    {/*    <button style={{border: '0'}} onClick={alert('ID Clicked')}>Номер</button>*/}
-                    {/*</th>*/}
-                    <th>Номер</th>
-                    {/*sort*/}
+                    <th>
+                        <button
+                            style={{border: '0'}}
+                            className='text-primary fw-bold'
+                            onClick={(e) => alert('id Clicked')}>Номер
+                            <i className='bi bi-caret-up'></i>
+                        </button>
+                    </th>
 
                     <th>Название</th>
                     <th>Описание</th>
 
-                    <th>Дата</th>
-                    {/*sort*/}
+                    <th>
+                        <button
+                            style={{border: '0'}}
+                            className='text-primary fw-bold'
+                            onClick={(e) => alert('date Clicked')}>Дата
+                            {/*<i className='bi bi-caret-up'></i>*/}
+                        </button>
+                    </th>
 
-                    <th>Статус</th>
-                    {/*sort*/}
+                    <th>
+                        <button
+                            style={{border: '0'}}
+                            className='text-primary fw-bold'
+                            onClick={(e) => alert('done Clicked')}>Статус
+                            {/*<i className='bi bi-caret-up'></i>*/}
+                        </button>
+                    </th>
+
                     <th>Удалить</th>
                 </tr>
                 </thead>

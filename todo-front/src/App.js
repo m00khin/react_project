@@ -53,11 +53,10 @@ function App() {
                     <strong>Список наших дел</strong>
                 </h1>
                 <button
-                    className='btn btn-outline-primary'
-                    style={{border: '0', background: '#fff', color: '#000'}}
+                    style={{border: '0', background: '#fff'}}
                     onClick={getTodos}>
                     {/*<span className='badge rounded-pill'>*/}
-                        <i className='bi bi-arrow-repeat fs-2 text-primary'></i>
+                        <i className='bi bi-arrow-repeat fs-1 text-primary'></i>
                     {/*</span>*/}
                 </button>
             </div>

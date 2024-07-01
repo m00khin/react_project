@@ -43,7 +43,6 @@ const AddTodo = ({createTodo}) => {
                     <div className='col'>
                         <button className='btn btn-primary' type='submit'>Создать дело</button>
                     </div>
-                    {/*<button className='btn btn-info' onClick={getTodos}>Обновить список дел</button>*/}
                 </div>
             </form>
         </div>
