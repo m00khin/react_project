@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-// import {getTodos} from "./App";
 
 
 const AddTodo = ({createTodo}) => {

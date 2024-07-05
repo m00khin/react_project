@@ -38,12 +38,6 @@ function App() {
         axios.post(API_URL, newTodo)
     }
 
-    {/*const sortTodo = (todo, field) => {*/}
-    {/*    todo.{field} = field */}
-    {/*    setTodos([...todos, todo].sort(todo1, todo2) => {*/}
-    {/*        return todo1.field - todo2.field */}
-    {/*    })}*/}
-
     return (
         <div className="App">
             <div className='d-flex justify-content-center'>

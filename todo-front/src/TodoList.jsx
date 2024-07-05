@@ -1,10 +1,22 @@
 import React from "react";
 import Todo from "./Todo";
-
+import SortTodo from "./SortTodo";
 
 // const TodoList = ({todos, removeTodo, editDone, sortTodo}) => {
 const TodoList = ({todos, removeTodo, editDone}) => {
-    if (!todos.length) {
+    // const {todoItems, requestSort, sortConfig} = SortTodo(todos)
+    const {todoItems, requestSort} = SortTodo(todos)
+
+    // const [sortedField, setSortedField] = useState(null)
+    // let sortedTodos = [...todos]
+    // if (sortedField !== null) {
+    //     sortedTodos.sort((a, b) => {
+    //         return a[sortedField.key] > b[sortedField.key] ? 1 : -1
+    //     })
+    //     sortTodo(sortedTodos)
+    // }
+
+    if (!todoItems.length) {
         return <h2 style={{textAlign: "center", color: 'red'}}>Дела не найдены</h2>
     }
 
@@ -15,10 +27,13 @@ const TodoList = ({todos, removeTodo, editDone}) => {
                 <tr>
                     <th>
                         <button
+                            type='button'
                             style={{border: '0'}}
+                            // className={getClassNameFor('id')}
                             className='text-primary fw-bold'
-                            onClick={(e) => alert('id Clicked')}>Номер
-                            <i className='bi bi-caret-up'></i>
+                            onClick={() => requestSort('id')}>Номер
+                            {/*<i className={sortConfig.direction === 'ascending' ?*/}
+                            {/*       'bi bi-caret-up' : 'bi bi-caret-down'}></i>*/}
                         </button>
                     </th>
 
@@ -29,8 +44,9 @@ const TodoList = ({todos, removeTodo, editDone}) => {
                         <button
                             style={{border: '0'}}
                             className='text-primary fw-bold'
-                            onClick={(e) => alert('date Clicked')}>Дата
-                            {/*<i className='bi bi-caret-up'></i>*/}
+                            onClick={() => requestSort('date')}>Дата
+                            {/*<i className={sortConfig.direction === 'ascending' ?*/}
+                            {/*       'bi bi-caret-up' : 'bi bi-caret-down'}></i>*/}
                         </button>
                     </th>
 
@@ -38,8 +54,9 @@ const TodoList = ({todos, removeTodo, editDone}) => {
                         <button
                             style={{border: '0'}}
                             className='text-primary fw-bold'
-                            onClick={(e) => alert('done Clicked')}>Статус
-                            {/*<i className='bi bi-caret-up'></i>*/}
+                            onClick={() => requestSort('done')}>Статус
+                            {/*<i className={sortConfig.direction === 'ascending' ?*/}
+                            {/*       'bi bi-caret-up' : 'bi bi-caret-down'}></i>*/}
                         </button>
                     </th>
 
@@ -47,12 +64,12 @@ const TodoList = ({todos, removeTodo, editDone}) => {
                 </tr>
                 </thead>
                 <tbody>
-                {
-                    todos.map(
-                        todoo =>
-                            <Todo todoo={todoo} key={todoo.id} removeTodo={removeTodo} editDone={editDone}/>
-                    )
-                }
+                    {
+                        todoItems.map(
+                            todoo =>
+                                <Todo todoo={todoo} key={todoo.id} removeTodo={removeTodo} editDone={editDone}/>
+                        )
+                    }
                 </tbody>
             </table>
         </div>
