@@ -49,39 +49,11 @@ function App() {
                 <button
                     style={{border: '0', background: '#fff'}}
                     onClick={getTodos}>
-                    {/*<span className='badge rounded-pill'>*/}
-                        <i className='bi bi-arrow-repeat fs-1 text-primary'></i>
-                    {/*</span>*/}
+                    <i className='bi bi-arrow-repeat fs-1 text-primary'></i>
                 </button>
             </div>
-            {/*<TodoList todos={todos} removeTodo={removeTodo} editDone={editDone} sortTodo={sortTodo}/>*/}
             <TodoList todos={todos} removeTodo={removeTodo} editDone={editDone}/>
             <AddTodo createTodo={createTodo}/>
-
-            {/*<table*/}
-            {/*    // id='table'*/}
-            {/*    data-toggle='table'*/}
-            {/*    // data-height='300'*/}
-            {/*    // data-cache='false'*/}
-            {/*    // data-data-type='text'*/}
-            {/*    // data-side-pagination='server'*/}
-            {/*    // data-content-type='application/json'*/}
-            {/*    data-url='http://127.0.0.1:8000/api/todo/'*/}
-            {/*>*/}
-            {/*    <thead>*/}
-            {/*    <tr>*/}
-            {/*        <th data-field="id" data-sortable='true'>Номер</th>*/}
-            {/*        <th data-field="title">Название</th>*/}
-            {/*        <th data-field="description">Описание</th>*/}
-            {/*        <th data-field="date" data-sortable='true'>Дата</th>*/}
-            {/*        <th data-field="done" data-sortable='true'>Статус</th>*/}
-            {/*        <th>Выполнить</th>*/}
-            {/*        <th>Отменить</th>*/}
-            {/*        <th>Удалить</th>*/}
-            {/*    </tr>*/}
-            {/*    </thead>*/}
-            {/*</table>*/}
-
         </div>
     );
 }

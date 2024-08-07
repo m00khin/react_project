@@ -1,10 +1,10 @@
 import {useMemo, useState} from "react";
 
-const SortTodo = (todoItems, config = null) => {
+const SortTodo = (todos, config = null) => {
     const [sortConfig, setSortConfig] = useState(config)
 
     const sortedTodos = useMemo(() => {
-        let sortableTodos = [...todoItems]
+        let sortableTodos = [...todos]
         if (sortConfig !== null) {
             sortableTodos.sort((a, b) => {
                 if (a[sortConfig.key] < b[sortConfig.key]) {
@@ -17,7 +17,7 @@ const SortTodo = (todoItems, config = null) => {
             })
         }
         return sortableTodos
-    }, [todoItems, sortConfig])
+    }, [todos, sortConfig])
 
     const requestSort = (key) => {
         let direction = 'ascending'
@@ -31,8 +31,7 @@ const SortTodo = (todoItems, config = null) => {
         setSortConfig({key, direction})
     }
 
-    return {todoItems: sortedTodos, requestSort}
-    // return {todoItems: sortedTodos, requestSort, sortConfig}
+    return {sorted: sortedTodos, requestSort}
 };
 
 export default SortTodo;
