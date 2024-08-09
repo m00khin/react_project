@@ -13,7 +13,6 @@ const AddTodo = ({createTodo}) => {
             setTodo({title: '', description: ''})
         } else {
             alert('Поле <Название> должно быть заполнено')
-            // return
         }
     }
 

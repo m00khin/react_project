@@ -10,6 +10,8 @@ const API_URL = 'http://127.0.0.1:8000/api/todo/'
 
 function App() {
     const [todos, setTodos] = useState([])
+    const excludeColumns = ['id', 'date', 'done']
+
 
     async function getTodos() {
         const response = await axios.get(API_URL)
@@ -33,6 +35,18 @@ function App() {
         })
     }
 
+    const searchTodo = (value) => {
+        const search = value.toLowerCase()
+        const filter = todos.filter(todo => {
+            return Object.keys(todo).some(key =>
+                excludeColumns.includes(key)
+                    ? false
+                    : todo[key].toLowerCase().includes(search)
+            )
+        })
+        setTodos(filter)
+    };
+
     const createTodo = (newTodo) => {
         setTodos([...todos, newTodo])
         axios.post(API_URL, newTodo)
@@ -49,10 +63,10 @@ function App() {
                 <button
                     style={{border: '0', background: '#fff'}}
                     onClick={getTodos}>
-                    <i className='bi bi-arrow-repeat fs-1 text-primary'></i>
+                    <i className='bi bi-arrow-repeat fs-2 text-primary'></i>
                 </button>
             </div>
-            <TodoList todos={todos} removeTodo={removeTodo} editDone={editDone}/>
+            <TodoList todos={todos} removeTodo={removeTodo} editDone={editDone} searchTodo={searchTodo}/>
             <AddTodo createTodo={createTodo}/>
         </div>
     );
